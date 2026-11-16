@@ -1,5 +1,10 @@
 # Changelog
 
+## 8.10.2-2 (2026-11-16)
+
+- README: Deploy on Railway button for the published template `suitecrm-1`. No change to the app or its image.
+- Start script (already on `main` before publishing): removes the duplicate Apache MPM that Railway's build brings back (AH00534), and the first-boot page answers 503 so the health check waits for SuiteCRM.
+
 ## 8.10.2-1 (2026-11-16)
 
 First version of the template.
