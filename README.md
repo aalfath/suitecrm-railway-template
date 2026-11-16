@@ -1,3 +1,5 @@
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/new/template/suitecrm-1?utm_medium=integration&utm_source=button&utm_campaign=suitecrm)
+
 # SuiteCRM on Railway
 
 Railway template for [SuiteCRM](https://suitecrm.com) **8.10.2**, the open-source CRM for sales, marketing and customer service.
