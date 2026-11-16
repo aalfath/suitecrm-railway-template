@@ -11,7 +11,7 @@ Railway template for [SuiteCRM](https://suitecrm.com) **8.10.2**, the open-sourc
 
 SuiteCRM publishes no Docker image of its own, so the Dockerfile installs the release package on top of the official PHP image.
 
-On first boot the start script copies SuiteCRM onto the volume, waits for MariaDB and runs the official CLI installer (`bin/console suitecrm:app:install`) with a generated admin password. There is no web installer to finish and no default password. While that runs (about a minute), the public URL shows a "being set up" page. The SuiteCRM scheduler (`cron.php`) runs every minute inside the container.
+On first boot the start script copies SuiteCRM onto the volume, waits for MariaDB and runs the official CLI installer (`bin/console suitecrm:app:install`) with a generated admin password. There is no web installer to finish and no default password. While that runs (about a minute), the public URL shows a "being set up" page (HTTP 503, so the health check waits for SuiteCRM). The SuiteCRM scheduler (`cron.php`) runs every minute inside the container.
 
 ## Variables
 

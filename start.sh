@@ -102,5 +102,10 @@ chown www-data:www-data "$OVR"
 
 stop_setup_page
 trap - EXIT
+# Railway's builder can drop the base image's deleted mods-enabled symlinks,
+# which re-enables mpm_event next to mpm_prefork (AH00534). mod_php needs prefork.
+rm -f /etc/apache2/mods-enabled/mpm_event.* /etc/apache2/mods-enabled/mpm_worker.*
+[ -e /etc/apache2/mods-enabled/mpm_prefork.load ] || a2enmod -q mpm_prefork
+
 log "starting Apache on port ${PORT}"
 exec apache2-foreground

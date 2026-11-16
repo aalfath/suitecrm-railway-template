@@ -1,7 +1,8 @@
 <?php
-// Served only while the first-boot install runs, so Railway's health check
-// passes and visitors see a status page instead of an error.
-http_response_code(200);
+// Served only while the first-boot install runs, so visitors see a status page
+// instead of a connection error. It answers 503 so Railway's health check waits
+// for SuiteCRM itself.
+http_response_code(503);
 header('Content-Type: text/html; charset=utf-8');
 header('Retry-After: 30');
 ?><!doctype html><html><head><meta charset="utf-8"><meta http-equiv="refresh" content="20"><title>SuiteCRM is starting</title></head>
